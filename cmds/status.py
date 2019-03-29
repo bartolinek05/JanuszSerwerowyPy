@@ -17,7 +17,7 @@ async def main(ctx):
             plrs.append(player["name"])
     
     for player in plrs:
-        msg += "    " + player["name"] + "\n"
+        msg += "    " + player + "\n"
         
     await ctx.send(msg)
 
