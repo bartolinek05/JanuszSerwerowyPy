@@ -9,7 +9,7 @@ import cmds
 global lastRun, mapChannel, playersChannel, updateChannel
 lastRun = time.time()
 
-Token = os.environ["Token"]
+Token = os.environ["TOKEN"]
 
 bot = commands.Bot(command_prefix='s!')
 
@@ -20,7 +20,7 @@ async def status(ctx):
 
 async def status_loop():
     while True:
-        info, players = cmds.status.checkStatus()
+        info, players = cmds.status.checkStatus()       
         print("LOOP: presence_update")
         game = discord.Game("aktualnie jest " + str(info["player_count"]) + " graczy")
         await bot.change_presence(status=discord.Status.online, activity=game)
